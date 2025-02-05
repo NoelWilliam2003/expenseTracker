@@ -23,6 +23,10 @@ urlpatterns = [
     path('', views.home),  # Add a path for the root
     path('admin/', admin.site.urls),
     path('api/', include('expense.urls')),
+    path('auth/', include('allauth.urls')),  # Django Allauth URLs
+    path('api/auth/', include('dj_rest_auth.urls')),  # REST Authentication
+    path('api/auth/social/', include('dj_rest_auth.registration.urls')),  # Social Login
+
     # path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     # path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
